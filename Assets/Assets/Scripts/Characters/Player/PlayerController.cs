@@ -25,21 +25,4 @@ public class PlayerController : BaseController
 
     
 
-void OnLook(InputValue inputValue)
-    {
-        //Vector2 mousePosition = inputValue.Get<Vector2>();
-        //Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
-        //lookDirection = (worldPos - (Vector2)transform.position);
-
-        //if (lookDirection.magnitude < .9f)
-        //{
-        //    lookDirection = Vector2.zero;
-        //}
-        //else
-        //{
-        //    lookDirection = lookDirection.normalized;
-        //}
-
-    }
-
 }

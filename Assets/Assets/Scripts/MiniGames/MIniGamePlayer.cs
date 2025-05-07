@@ -37,7 +37,7 @@ public class MiniGamePlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()  //게임오버시 입력 및 게임오버가 아닐시 Flab작동
     {
         if (isDead)
         {
@@ -68,7 +68,7 @@ public class MiniGamePlayer : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() 
     {
         if (isDead) return;
 

@@ -14,20 +14,20 @@ public class MiniGameInput : MonoBehaviour
         enterTheMiniGame.gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void Update()  //미니게임 입장 과정
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            if (CanEnterMiniGame())
+            if (CanEnterMiniGame()) //미니게임의 대화창이 켜져있는지 판단
             {
-                EnterMiniGame();
+                EnterMiniGame(); //미니게임 입장
             }
         }
     }
 
-    private bool CanEnterMiniGame()
+    private bool CanEnterMiniGame() //미니게임의 대화창이 켜져있는지 판단
     {
-        if (enterTheMiniGame.gameObject.activeSelf == true)
+        if (enterTheMiniGame.gameObject.activeSelf == true) 
         {
             Debug.Log("CanEnterMiniGame true");
             return true;
@@ -40,7 +40,7 @@ public class MiniGameInput : MonoBehaviour
 
     }
 
-    private void EnterMiniGame()
+    private void EnterMiniGame()  //미니게임 입장
     {
         Debug.Log("EnterMiniGame");
         SceneManager.LoadScene(1);

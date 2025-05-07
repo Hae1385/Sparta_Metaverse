@@ -9,16 +9,16 @@ public class MiniGameRabit : MonoBehaviour
 
     private void Start()
     {
-        rabitLog.gameObject.SetActive(false);
+        rabitLog.gameObject.SetActive(false);  //대화 비활성화
     }
 
     private void Update()
     {
-        if (rabitLog.gameObject.activeSelf == true)
+        if (rabitLog.gameObject.activeSelf == true) //게임 오브젝트가 있다면
         {
-            ChangeTheLog();
+            ChangeTheLog(); //대화 수정
         }
-        else
+        else //게임 오브젝트가 꺼지면 처음 로그로 돌아가기위한 코드
         {
             string rabitStartLog = ("Welcome to \n MiniGame House");
             rabitLog.text = rabitStartLog.ToString();
@@ -32,7 +32,7 @@ public class MiniGameRabit : MonoBehaviour
             rabitLog.gameObject.SetActive(true);
         }
     }
-    private void ChangeTheLog()
+    private void ChangeTheLog() //대화수정
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
