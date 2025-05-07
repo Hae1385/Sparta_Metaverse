@@ -23,6 +23,8 @@ public class MiniGamePlayer : MonoBehaviour
     {
             miniGameManager = MiniGameManager.Instance;
 
+        Debug.Log("MiniGamePlayer " +miniGameManager );
+
             animator = GetComponentInChildren<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
@@ -43,7 +45,7 @@ public class MiniGamePlayer : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
-                    miniGameManager.RestartGame();
+                    miniGameManager.BackToMain();
                 }
             }
             else

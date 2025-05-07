@@ -17,6 +17,8 @@ public class Obstacles : MonoBehaviour
 
     MiniGameManager minigameManager;
 
+
+
     private void Start()
     {
         minigameManager = MiniGameManager.Instance;
@@ -40,12 +42,16 @@ public class Obstacles : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        MiniGamePlayer player = collision.GetComponent<MiniGamePlayer>();
 
-        if (player != null)
-            return;
-        minigameManager.AddScore(1);
+        MiniGamePlayer minigamePlayer = collision.GetComponent<MiniGamePlayer>();
 
 
+        if (minigamePlayer != null)
+        {
+            if (minigameManager == null)
+                Debug.Log("Obstacles MinigameManager is Null");
+            else
+                minigameManager.AddScore(1);
+        }
     }
 }

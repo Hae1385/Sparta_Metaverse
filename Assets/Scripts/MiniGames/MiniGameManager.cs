@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MiniGameManager : MonoBehaviour
 {
-    static MiniGameManager miniGameManager;
+    public static MiniGameManager miniGameManager;
 
     private int currentScore = 0;
 
@@ -31,9 +31,9 @@ public class MiniGameManager : MonoBehaviour
         miniuiManager.SetRestart();
     }
 
-    public void RestartGame()
+    public void BackToMain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 
     public void AddScore(int score)

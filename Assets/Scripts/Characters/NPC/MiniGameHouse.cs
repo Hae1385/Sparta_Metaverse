@@ -8,6 +8,9 @@ public class MiniGameHouse : MonoBehaviour
 {
     public string miniGameSceneName = "MiniGameScene";
     public TextMeshProUGUI enterTheMiniGame;
+    MiniGameInput MiniGameInput;
+
+    public MiniGameInput miniGameInput { get { return miniGameInput; } }
 
     private void Start()
     {

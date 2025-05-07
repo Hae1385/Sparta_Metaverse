@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class MiniUIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MiniUIManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI bestScoreText;
 
+    public int Score;
     public int bestScore = 0;
 
     public int BestScore { get => bestScore; }
@@ -21,12 +23,7 @@ public class MiniUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameOverText == null)
-            Debug.LogError("restart text is null");
-
-        if (scoreText == null)
-            Debug.LogError("score text is null");
-
+        bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
         gameOverText.gameObject.SetActive(false);
     }
 
@@ -35,18 +32,18 @@ public class MiniUIManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
     }
 
-    public void UdateScore(int score, int bestScore)
+    public void UdateScore(int score, int bestscore)
     {
         scoreText.text = score.ToString();
+        Score = score;
 
-        if(bestScore < score)
+        bestScoreText.text = bestScore.ToString();
+
+        if (bestScore < Score)
         {
-            bestScore = score;
-
+            bestScore = Score;
             PlayerPrefs.SetInt(BestScoreKey, bestScore);
         }
     }
-
-    
 
 }
